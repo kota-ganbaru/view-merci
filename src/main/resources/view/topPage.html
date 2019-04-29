@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<head>
+	<link rel="stylesheet" href= css/main.css>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+	<title>メルシー</title>
+</head>
+<body>
+	<h1 class="topline">Merci</h1>
+	<div class="tabs">
+		<input id="all" type="radio" name="tab_item" checked>
+		<label class="tab_item" for="all">総合</label>
+		<input id="art" type="radio" name="tab_item">
+		<label class="tab_item" for="art">美術</label>
+		<input id="caffee" type="radio" name="tab_item">
+		<label class="tab_item" for="caffee">コーヒー</label>
+		<input id="cafe" type="radio" name="tab_item">
+		<label class="tab_item" for="cafe">カフェ</label>
+		<div class="tab_content" id="all_content">
+			<div class="tab_content_description" id="all_content_load"> 
+		    </div>
+	    </div>
+	    <div class="tab_content" id="art_content">
+			<div class="tab_content_description">
+				<p class="c-txtsp">美術</p>
+		    </div>
+	    </div>
+	    <div class="tab_content" id="caffee_content">
+			<div class="tab_content_description">
+				<p class="c-txtsp">コーヒー</p>
+		    </div>
+	    </div>
+	    <div class="tab_content" id="cafe_content">
+			<div class="tab_content_description">
+				<p class="c-txtsp">カフェ</p>
+		    </div>
+	    </div>
+    </div>
+</body>
+</html>
+
+<script>
+$(function(){
+  $("#all_content_load").load("all.html");
+});
+</script>
