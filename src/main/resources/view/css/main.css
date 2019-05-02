@@ -5,7 +5,6 @@
     padding: 0px;
 }
 
-.fixedsticky { top: 0; }
 .topline{
 	font-size: 15px;
 	color: white;
@@ -174,4 +173,184 @@ a {display:block;
 	color: #565656;
 	text-decoration: none;
 	text-align: center;
+}
+@media screen and (max-width: 480px) {
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.topline{
+	font-size: 10px;
+	color: white;
+	background-color: #333333;
+	text-align: center;
+	vertical-align: center;
+	font-family:'メイリオ', Meiryo, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', sans-serif !important;}
+
+.contents {
+	margin-top: 15px;
+	padding-bottom: 15px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	margin: 0 auto;}
+
+/*タブのスタイル*/
+.tab_item_all {
+	width: calc(100%/4);
+	height: 35px;
+	border-bottom: 3px solid #5ab4bd;
+	background-color: #d9d9d9;
+	line-height: 35px;
+	font-size: 12px;
+	text-align: center;
+	color: #565656;
+	display: block;
+	float: left;
+	text-align: center;
+	font-weight: bold;
+	transition: all 0.2s ease;
+}
+.tab_item_art {
+	width: calc(100%/4);
+	height: 35px;
+	border-bottom: 3px solid #FF33FF;
+	background-color: #d9d9d9;
+	line-height: 35px;
+	font-size: 12px;
+	text-align: center;
+	color: #565656;
+	display: block;
+	float: left;
+	text-align: center;
+	font-weight: bold;
+	transition: all 0.2s ease;
+}
+.tab_item_caffee {
+	width: calc(100%/4);
+	height: 35px;
+	border-bottom: 3px solid #FFCC00;
+	background-color: #d9d9d9;
+	line-height: 35px;
+	font-size: 12px;
+	text-align: center;
+	color: #565656;
+	display: block;
+	float: left;
+	text-align: center;
+	font-weight: bold;
+	transition: all 0.2s ease;
+}
+.tab_item_cafe {
+	width: calc(100%/4);
+	height: 35px;
+	border-bottom: 3px solid #33CC66;
+	background-color: #d9d9d9;
+	line-height: 35px;
+	font-size: 12px;
+	text-align: center;
+	color: #565656;
+	display: block;
+	float: left;
+	text-align: center;
+	font-weight: bold;
+	transition: all 0.2s ease;
+}
+#tab_item:hover {
+	opacity: 0.75;
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+	display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+	display: none;
+	padding: 15px 15px 0;
+	clear: both;
+	overflow: hidden;
+}
+
+
+/*選択されているタブのコンテンツのみを表示*/
+#all:checked ~ #all_content,
+#art:checked ~ #art_content,
+#caffee:checked ~ #caffee_content,
+#cafe:checked ~ #cafe_content {
+	display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.contents input:checked + .tab_item_all {
+	background-color: #5ab4bd;
+	color: #fff;
+}
+.contents input:checked + .tab_item_art {
+	background-color: #FF33FF;
+	color: #fff;
+}
+.contents input:checked + .tab_item_caffee {
+	background-color: #FFCC00;
+	color: #fff;
+}
+.contents input:checked + .tab_item_cafe {
+	background-color: #33CC66;
+	color: #fff;
+}
+
+.data_list_all_content{
+	color: #404040;
+ 	border-left: solid 6px #5ab4bd;/*左側の線*/
+ 	background: #d9d9d9;
+ 	margin-bottom: 3px;/*下のバーとの余白*/
+ 	line-height: 3;
+ 	list-style-type: none!important;/*ポチ消す*/
+ 	font-weight: bold;
+ 	transition: all 0.2s ease;
+ 	font-size: 10px;
+}
+.data_list_art_content{
+	color: #404040;
+ 	border-left: solid 6px #FF33FF;/*左側の線*/
+ 	background: #d9d9d9;
+ 	margin-bottom: 3px;/*下のバーとの余白*/
+ 	line-height: 3;
+ 	list-style-type: none!important;/*ポチ消す*/
+ 	font-weight: bold;
+ 	transition: all 0.2s ease;
+ 	font-size: 10px;
+}
+.data_list_caffee_content{
+	color: #404040;
+ 	border-left: solid 6px #FFCC00;/*左側の線*/
+ 	background: #d9d9d9;
+ 	margin-bottom: 3px;/*下のバーとの余白*/
+ 	line-height: 3;
+ 	list-style-type: none!important;/*ポチ消す*/
+ 	font-weight: bold;
+ 	transition: all 0.2s ease;
+ 	font-size: 10px;
+}
+.data_list_cafe_content{
+	color: #404040;
+ 	border-left: solid 6px #33CC66;/*左側の線*/
+ 	background: #d9d9d9;
+ 	margin-bottom: 3px;/*下のバーとの余白*/
+ 	line-height: 3;
+ 	list-style-type: none!important;/*ポチ消す*/
+ 	font-weight: bold;
+ 	transition: all 0.2s ease;
+ 	font-size: 10px;
+}
+#data_list_content:hover{
+	opacity: 0.50;
+}
+
+a {display:block;
+	color: #565656;
+	text-decoration: none;
+	text-align: center;
+}
 }
