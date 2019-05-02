@@ -4,6 +4,30 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-
+	<div id="data_list_all_view">
+	</div>
 </body>
+<script>
+$(function(){
+	$.getJSON("sample.json" , function(data) {
+		var dataList = "";
+		for (var i=0; i<data.length; i++){
+			console.log(data[i]['article_genre_id']);
+			if(data[i]['article_genre_id'] == 1){
+				dataList += ("<li class=\"data_list_art_content\" id=\"data_list_content\">"+"<a href=\""+data[i]['article_url']+"\">"+data[i]['article_title']+"</a></li>"); 
+				document.getElementById("data_list_all_view").innerHTML = dataList;		
+			}else if(data[i]['article_genre_id'] == 2){
+				dataList += ("<li class=\"data_list_caffee_content\" id=\"data_list_content\">"+"<a href=\""+data[i]['article_url']+"\">"+data[i]['article_title']+"</a></li>"); 
+				document.getElementById("data_list_all_view").innerHTML = dataList;
+			}else if(data[i]['article_genre_id'] == 3){
+				dataList += ("<li class=\"data_list_cafe_content\" id=\"data_list_content\">"+"<a href=\""+data[i]['article_url']+"\">"+data[i]['article_title']+"</a></li>"); 
+				document.getElementById("data_list_all_view").innerHTML = dataList;
+			}else{
+				dataList += ("<li class=\"data_list_all_content\" id=\"data_list_content\">"+"<a href=\""+data[i]['article_url']+"\">"+data[i]['article_title']+"</a></li>"); 
+				document.getElementById("data_list_all_view").innerHTML = dataList;
+			}
+	}
+	});
+});
+</script>
 </html>

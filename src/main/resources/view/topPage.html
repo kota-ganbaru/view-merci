@@ -7,32 +7,29 @@
 </head>
 <body>
 	<h1 class="topline">Merci</h1>
-	<div class="tabs">
-		<input id="all" type="radio" name="tab_item" checked>
-		<label class="tab_item" for="all">総合</label>
-		<input id="art" type="radio" name="tab_item">
-		<label class="tab_item" for="art">美術</label>
-		<input id="caffee" type="radio" name="tab_item">
-		<label class="tab_item" for="caffee">コーヒー</label>
-		<input id="cafe" type="radio" name="tab_item">
-		<label class="tab_item" for="cafe">カフェ</label>
+	<div class="contents">
+		<input class="load_all" id="all" type="radio" name="tab_item">
+		<label class="tab_item_all" id= "tab_item" for="all">総合</label>
+		<input class="load_art" id="art" type="radio" name="tab_item">
+		<label class="tab_item_art" id= "tab_item" for="art">美術</label>
+		<input class="load_caffee" id="caffee" type="radio" name="tab_item">
+		<label class="tab_item_caffee" id= "tab_item" for="caffee">コーヒー</label>
+		<input class="load_cafe" id="cafe" type="radio" name="tab_item">
+		<label class="tab_item_cafe" id= "tab_item" for="cafe">カフェ</label>
 		<div class="tab_content" id="all_content">
 			<div class="tab_content_description" id="all_content_load"> 
 		    </div>
 	    </div>
 	    <div class="tab_content" id="art_content">
-			<div class="tab_content_description">
-				<p class="c-txtsp">美術</p>
+			<div class="tab_content_description" id="art_content_load">
 		    </div>
 	    </div>
 	    <div class="tab_content" id="caffee_content">
-			<div class="tab_content_description">
-				<p class="c-txtsp">コーヒー</p>
+			<div class="tab_content_description" id="caffee_content_load">
 		    </div>
 	    </div>
 	    <div class="tab_content" id="cafe_content">
-			<div class="tab_content_description">
-				<p class="c-txtsp">カフェ</p>
+			<div class="tab_content_description" id="cafe_content_load">
 		    </div>
 	    </div>
     </div>
@@ -41,6 +38,23 @@
 
 <script>
 $(function(){
-  $("#all_content_load").load("all.html");
+	var $load_all = $('.load_all');
+	var $load_art = $('.load_art');
+	var $load_caffee = $('.load_caffee');
+	var $load_cafe = $('.load_cafe');
+	$load_all.on('click', function() {
+    	$("#all_content_load").load("all.html");
+	});
+	$load_art.on('click', function() {
+    	$("#art_content_load").load("art.html");
+	});
+	$load_caffee.on('click', function() {
+    	$("#caffee_content_load").load("caffee.html");
+	});
+	$load_cafe.on('click', function() {
+    	$("#cafe_content_load").load("cafe.html");
+	});
+	$("#all").click();
 });
+
 </script>

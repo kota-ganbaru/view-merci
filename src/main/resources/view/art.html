@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<head>
+	<link rel="stylesheet" href= css/main.css>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div id="data_list_art_view">
+	</div>
+</body>
+<script>
+$(function(){
+	$.getJSON("sample.json" , function(data) {
+		var dataList = "";
+		for (var i=0; i<data.length; i++){
+		dataList += ("<li class=\"data_list_art_content\" id=\"data_list_content\">"+"<a href=\""+data[i]['article_url']+"\">"+data[i]['article_title']+"</a></li>"); 
+		document.getElementById("data_list_art_view").innerHTML = dataList;
+	}
+	});
+});
+</script>
+</html>
